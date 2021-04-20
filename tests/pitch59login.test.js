@@ -1,4 +1,3 @@
-const rp = require('request-promise-native');
 const fetch = require('node-fetch')
 const config = require('config');
 
