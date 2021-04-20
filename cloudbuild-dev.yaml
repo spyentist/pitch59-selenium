@@ -1,0 +1,16 @@
+steps:
+#This steps will run the code that we have for our tests 
+#to ensure that the code does not break
+#If it does breack it will not create a build or an image
+- name: node
+  id: build tests
+  entrypoint: npm
+  args:
+  - 'install'
+
+- name: node
+  id: run development environment tests
+  entrypoint: npm
+  args:
+  - 'run'
+  - 'test-dev'
