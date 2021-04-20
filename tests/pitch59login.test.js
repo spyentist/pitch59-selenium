@@ -19,7 +19,6 @@ it(`Testing to see if we can signin`, async () => {
     let errorCaught = null;
 
     try {
-        //let response = await rp(options);
         const response = await fetch(loginUrl, options);
         const json = await response.json();
         console.log('Response',json);
