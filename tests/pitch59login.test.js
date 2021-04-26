@@ -10,19 +10,21 @@ it(`Testing to see if we can signin`, async () => {
             "content-type":"application/json"
         },
         body: {
-            "emailId": "Shandu@gmail.com",
-            "password": "Lutendo1"
+            //"emailId": "Shandu@gmail.com",
+            //"password": "Lutendo1"
+            "emailId": "ironman@gmail.com",
+            "password": "BetterThanCap10"
         }
     };
 
     let errorWasCaught = false;
     let errorCaught = null;
-
+    let json=null;
     try {
         const response = await fetch(loginUrl, options);
-        const json = await response.json();
+        json = await response.json();
         console.log('Response',json);
-        return response;
+        
     } catch (exception) {
         errorCaught = exception;
         errorWasCaught = true;
@@ -30,6 +32,8 @@ it(`Testing to see if we can signin`, async () => {
     }
 
     expect(errorWasCaught).toBe(false);
+    console.log(json.code)
+    expect(json.code).toBe(2012);
 });
 
 
