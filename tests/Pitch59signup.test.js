@@ -1,4 +1,4 @@
-const rp = require('request-promise-native');
+const fetch = require('node-fetch')
 const config = require('config');
 
 const signupUrl = config.get('pitch59-url') + '/api/account/sign-up?otp_check=true';
@@ -28,15 +28,15 @@ it(`Testing to see if we can sign up a new user`, async () => {
             "senderEmail":""
             },
             "otpCode":9865},
-        json: true,
-        simple: false,
     };
 
     let errorWasCaught = false;
     let errorCaught = null;
 
     try {
-        let response = await rp(options);
+        const response = await fetch(loginUrl, options);
+        const json = await response.json();
+        console.log('Response',json);
         return response;
     } catch (exception) {
         errorCaught = exception;
@@ -46,5 +46,8 @@ it(`Testing to see if we can sign up a new user`, async () => {
 
     expect(errorWasCaught).toBe(false);
 });
+
+
+
 
 
