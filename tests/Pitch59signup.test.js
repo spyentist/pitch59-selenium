@@ -11,14 +11,14 @@ it(`Testing to see if we can sign up a new user`, async () => {
         headers: {
         },
         body: {"id":"0",
-        "firstName":"Richard",
-        "lastName":"Kevyn",
-        "contactNumber":"(999) 999-1346",
+        "firstName":"Jimothy",
+        "lastName":"Burns",
+        "contactNumber":"(999) 999-1325",
         "emailId":"Shandu@gmail.com",
         "profilePictureThumbnailId":"",
         "profilePictureThumbnailUrl":"",
         "profilePictureFileId":"",
-        "password":"Lutendo1",
+        "password":"Lutendo2",
         "zipCode":"84440",
         "userReferralModel":{
             "id":"0",
