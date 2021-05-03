@@ -48,9 +48,7 @@ it(`Testing to see if we can sign up a new user`, async () => {
 });
 
 
-
-
-
+const loginUrl = config.get("pitch59-url") + "/api/account/login";
 
 it(`Testing to see if we can signin`, async () => {
   let options = {
