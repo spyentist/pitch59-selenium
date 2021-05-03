@@ -1,4 +1,3 @@
-const fetch = require('node-fetch')
 const config = require('config');
 
 const signupUrl = config.get('pitch59-url') + '/api/account/sign-up?otp_check=true';
