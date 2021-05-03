@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 const config = require('config');
 
 const signupUrl = config.get('pitch59-url') + '/api/account/sign-up?otp_check=true';
@@ -50,10 +51,6 @@ it(`Testing to see if we can sign up a new user`, async () => {
 
 
 
-const fetch = require("node-fetch");
-const config = require("config");
-
-const loginUrl = config.get("pitch59-url") + "/api/account/login";
 
 it(`Testing to see if we can signin`, async () => {
   let options = {
