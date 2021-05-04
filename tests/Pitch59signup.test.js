@@ -33,6 +33,9 @@ it(`Testing to see if we can sign up a new user`, async () => {
     let errorWasCaught = false;
     let errorCaught = null;
 
+    
+    const loginUrl = config.get("pitch59-url") + "/api/account/login";
+    
     try {
         const response = await fetch(loginUrl, options);
         const json = await response.json();
