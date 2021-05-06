@@ -10,25 +10,19 @@ it(`Testing to see if we can sign up a new user`, async () => {
         uri: signupUrl,
         headers: {
         },
-        body: {"id":"0",
-        "firstName":"Richard",
-        "lastName":"Kevyn",
-        "contactNumber":"(999) 999-1346",
-        "emailId":"Shandu@gmail.com",
-        "profilePictureThumbnailId":"",
-        "profilePictureThumbnailUrl":"",
-        "profilePictureFileId":"",
-        "password":"Lutendo1",
-        "zipCode":"84440",
-        "userReferralModel":{
-            "id":"0",
-            "userName":"",
-            "referralEmail":"Shandu@gmail.com",
-            "referralPhone":"",
-            "senderEmail":""
-            },
-            "otpCode":9865},
-    };
+        body: {
+    "firstName": "Tony",
+    "lastName": "Stark",
+    "isTesterUser": true,
+    "contactNumber": "(999) 999-9632",
+    "emailId": "testmurdock11@gmail.com",
+    "password": "BetterThanCap10",
+    "zipCode": "84440",
+    "userReferralModel": {
+        "referralEmail": "Shandu@gmail.com"
+    },
+    "otpCode": 9865
+};
 
     let errorWasCaught = false;
     let errorCaught = null;
