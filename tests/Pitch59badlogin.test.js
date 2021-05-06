@@ -1,5 +1,7 @@
 const fetch = require("node-fetch");
 const config = require('config');
+let token = null;
+let userID = null;
 
 const signupUrl = config.get('pitch59-url') + '/api/account/sign-up?otp_check=true';
 
@@ -14,14 +16,15 @@ it(`Testing to see if we can sign up a new user`, async () => {
     "firstName": "Tony",
     "lastName": "Stark",
     "isTesterUser": true,
-    "contactNumber": "(999) 999-9632",
-    "emailId": "testmurdock11@gmail.com",
+    "contactNumber": "(999) 999-9637",
+    "emailId": "testGroup2@gmail.com",
     "password": "BetterThanCap10",
     "zipCode": "84440",
     "userReferralModel": {
         "referralEmail": "Shandu@gmail.com"
     },
     "otpCode": 9865
+  }
 };
 
     let errorWasCaught = false;
@@ -64,17 +67,34 @@ it(`Testing to see if we can signin`, async () => {
   try {
     const response = await fetch(loginUrl, options);
     json = await response.json();
+    token = json.token;
+    userID = json.userId;
     console.log("Response", json);
+    //delete user
+
+  let options = { 
+    method: 'POST',
+    headers: {
+      'Authorization' : 'bearer' + token
+    }
+  }
+  let response = await fetch('pitch59-url') + '/api/users/' + userID + '/deleteTestUser';
   } catch (exception) {
     errorCaught = exception;
     errorWasCaught = true;
     throw console.log(errorCaught);
   }
 
+
   expect(errorWasCaught).toBe(true);
   console.log(json.code);
   expect(json.code).toBe(2012);
+
 });
+
+
+
+
 
 
 
