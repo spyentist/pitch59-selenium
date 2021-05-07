@@ -65,7 +65,7 @@ it(`Testing to see if we can signin`, async () => {
   let errorCaught = null;
   let json = null;
   try {
-    const response = await fetch(loginUrl, options);
+    let response = await fetch(loginUrl, options);
     json = await response.json();
     token = json.token;
     userID = json.userId;
