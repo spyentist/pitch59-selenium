@@ -9,7 +9,8 @@ it(`Testing to see if we can signout`, async () => {
         method: 'POST',
         uri: signoutUrl,
         headers: {
-            authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTSUQiOiJ2WUNiU1NyS2JaUWMrYkNPcXZFb0NvMzJpbVVoWFdhMTF6NEJZK2oxZkZHWWJhbTdZb0RMYnFKRFVOQ2ZqL1NFIiwiVUlEIjoiaWlsd3BEWHYzWDlRZis3MGpXbzUreDFOdGI5eWlMbWNjYjk1NGdmNWgrZlBXNXdGV2F3VDBpVDRrR2Jid1lUVSIsIlJJRCI6IlFUbUovM0xFaEM1NU9FQVRIRUExSDRxQ29rY0kyczdseEUzSW5QTzdMcU09Iiwicm9sZSI6IlVzZXIiLCJuYmYiOjE2MjAyMjIzNzcsImV4cCI6MTYyMDU4MjM3NywiaWF0IjoxNjIwMjIyMzc3LCJpc3MiOiJQaXRjaDU5QVBJIiwiYXVkIjoiUGl0Y2g1OVdlYkNsaWVudCJ9.26mI78XtlZYRPF0Wa-GjqxRPzSSDey7qiympllhlip0"
+//            authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTSUQiOiJ2WUNiU1NyS2JaUWMrYkNPcXZFb0NvMzJpbVVoWFdhMTF6NEJZK2oxZkZHWWJhbTdZb0RMYnFKRFVOQ2ZqL1NFIiwiVUlEIjoiaWlsd3BEWHYzWDlRZis3MGpXbzUreDFOdGI5eWlMbWNjYjk1NGdmNWgrZlBXNXdGV2F3VDBpVDRrR2Jid1lUVSIsIlJJRCI6IlFUbUovM0xFaEM1NU9FQVRIRUExSDRxQ29rY0kyczdseEUzSW5QTzdMcU09Iiwicm9sZSI6IlVzZXIiLCJuYmYiOjE2MjAyMjIzNzcsImV4cCI6MTYyMDU4MjM3NywiaWF0IjoxNjIwMjIyMzc3LCJpc3MiOiJQaXRjaDU5QVBJIiwiYXVkIjoiUGl0Y2g1OVdlYkNsaWVudCJ9.26mI78XtlZYRPF0Wa-GjqxRPzSSDey7qiympllhlip0"
+            'Authorization' : 'bearer' + token
         }
     };
 
@@ -19,6 +20,7 @@ it(`Testing to see if we can signout`, async () => {
     try {
         const response = await fetch(signoutUrl, options);
         const json = await response.json();
+        token = json.token;
         console.log('Response',json);
         return response;
         
