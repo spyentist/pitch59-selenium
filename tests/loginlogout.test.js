@@ -67,5 +67,5 @@ it(`Testing to see if we can signout`, async () => {
     }
 
     expect(errorWasCaught).toBe(false);
-//    expect(status).toBe(200);
+    expect(status).toBe(200);
 });
