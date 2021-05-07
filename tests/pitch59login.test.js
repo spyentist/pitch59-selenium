@@ -1,6 +1,5 @@
 const fetch = require("node-fetch");
 const config = require("config");
-let token = null;
 
 const loginUrl = config.get("pitch59-url") + "/api/account/login";
 
