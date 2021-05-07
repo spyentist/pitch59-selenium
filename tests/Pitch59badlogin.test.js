@@ -31,7 +31,7 @@ it(`Testing to see if we can sign up a new user`, async () => {
     let errorCaught = null;
 
     try {
-        const response = await fetch(loginUrl, options);
+        let response = await fetch(loginUrl, options);
         const json = await response.json();
         console.log('Response',json);
         return response;
