@@ -1,5 +1,6 @@
 const fetch = require('node-fetch')
 const config = require('config');
+let token = null;
 
 const signoutUrl = config.get('pitch59-url') + '/dev/api/account/logout';
 
