@@ -65,7 +65,8 @@ it(`Testing to see if we can signin`, async () => {
   let errorCaught = null;
   let json = null;
   try {
-    let response = await fetch(loginUrl, options);
+// removed const or let    
+    response = await fetch(loginUrl, options);
     json = await response.json();
     token = json.token;
     userID = json.userId;
@@ -78,7 +79,8 @@ it(`Testing to see if we can signin`, async () => {
       'Authorization' : 'bearer' + token
     }
   }
-  let response = await fetch('pitch59-url') + '/api/users/' + userID + '/deleteTestUser';
+// removed const or let
+  response = await fetch('pitch59-url') + '/api/users/' + userID + '/deleteTestUser';
   } catch (exception) {
     errorCaught = exception;
     errorWasCaught = true;
