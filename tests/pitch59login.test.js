@@ -12,8 +12,8 @@ it(`Testing to see if we can signin`, async () => {
     body: JSON.stringify({
       //"emailId": "Shandu@gmail.com",
       //"password": "Lutendo1"
-      emailId: "ironman@gmail.com",
-      password: "BetterThanCap10"
+      emailId: "myfriend@gmail.com",
+      password: "YoDaddy"
     })
   };
 
