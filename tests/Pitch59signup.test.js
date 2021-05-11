@@ -9,10 +9,13 @@ it(`Testing to see if we can sign up a new user`, async () => {
         method: 'POST',
         uri: signupUrl,
         headers: {
+            "content-type": "application/json"
         },
-        body: {"id":"0",
+        body: {
+        "id":"0",
         "firstName":"Jimothy",
         "lastName":"Burns",
+        "isTesterUser": true, //This was in postman, just threw it in to test.
         "contactNumber":"(999) 999-1326",
         "emailId":"myfriendjimothy@gmail.com",
         "profilePictureThumbnailId":"",
@@ -28,7 +31,7 @@ it(`Testing to see if we can sign up a new user`, async () => {
             "senderEmail":""
             },
             "otpCode":9865},
-    };
+        };
 
     let errorWasCaught = false;
     let errorCaught = null;
