@@ -16,27 +16,28 @@ it(`Testing to see if we can sign up a new user`, async () => {
         method: 'POST',
         uri: signupUrl,
         headers: {
+          "content-type": "application/json"
         },
-        body: {
+        body: JSON.stringify({
     "firstName": "Tony",
     "lastName": "Stark",
     "isTesterUser": true,
     "contactNumber": "(999) 999-9638",
-    "emailId": "testGroup2@gmail.com",
+    "emailId": "Group2@gmail.com",
     "password": "BetterThanCap10",
     "zipCode": "84440",
     "userReferralModel": {
-        "referralEmail": "scmurdock@gmail.com"
+        "referralEmail": "help@pitch59.com"
     },
     "otpCode": 9865
-  }
-};
+  })
+    };
 
     let errorWasCaught = false;
     let errorCaught = null;
 
     try {
-        response = await fetch(loginUrl, options);
+        response = await fetch(signupUrl, options);
         const json = await response.json();
         console.log('Response',json);
         return response;
@@ -58,7 +59,7 @@ it(`Testing to see if we can signin`, async () => {
       "content-type": "application/json"
     },
     body: JSON.stringify({
-      emailId: "testGroup2@gmail.com",
+      emailId: "Group2@gmail.com",
       //"password": "Lutendo1"
       //emailId: "ironman@gmail.com",
       password: "BadPassword"
@@ -72,15 +73,15 @@ it(`Testing to see if we can signin`, async () => {
 // removed const or let    
     response = await fetch(loginUrl, options);
     json = await response.json();
-    token = json.token;
     userID = json.userId;
-    console.log("Response", json);
+    console.log('Response', json);
     //delete user
 
   options = { 
     method: 'POST',
     headers: {
-      'Authorization' : 'bearer' + token
+      'Authorization' : 'bearer' + token,
+      "content-type": "application/json"
     }
   }
 // removed const or let
@@ -93,8 +94,8 @@ it(`Testing to see if we can signin`, async () => {
 
 
   expect(errorWasCaught).toBe(false);
-  console.log(json.code);
-  expect(json.code).toBe(2012);
+  console.log(json[0].code);
+  expect(json[0].code).toBe(2001);
 
 });
 
