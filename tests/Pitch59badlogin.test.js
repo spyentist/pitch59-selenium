@@ -2,12 +2,17 @@ const fetch = require("node-fetch");
 const config = require('config');
 let token = null;
 let userID = null;
+let response = null;
+let options = null;
+
 
 const signupUrl = config.get('pitch59-url') + '/api/account/sign-up?otp_check=true';
+const loginUrl = config.get("pitch59-url") + "/api/account/login";
+const delUserURL = config.get('pitch59-url') + '/api/users/' + userID + '/deleteTestUser';
 
 it(`Testing to see if we can sign up a new user`, async () => {
     const date = new Date();
-    let options = {
+    options = {
         method: 'POST',
         uri: signupUrl,
         headers: {
@@ -16,12 +21,12 @@ it(`Testing to see if we can sign up a new user`, async () => {
     "firstName": "Tony",
     "lastName": "Stark",
     "isTesterUser": true,
-    "contactNumber": "(999) 999-9637",
+    "contactNumber": "(999) 999-9638",
     "emailId": "testGroup2@gmail.com",
     "password": "BetterThanCap10",
     "zipCode": "84440",
     "userReferralModel": {
-        "referralEmail": "Shandu@gmail.com"
+        "referralEmail": "scmurdock@gmail.com"
     },
     "otpCode": 9865
   }
@@ -31,7 +36,7 @@ it(`Testing to see if we can sign up a new user`, async () => {
     let errorCaught = null;
 
     try {
-        let response = await fetch(loginUrl, options);
+        response = await fetch(loginUrl, options);
         const json = await response.json();
         console.log('Response',json);
         return response;
@@ -41,23 +46,22 @@ it(`Testing to see if we can sign up a new user`, async () => {
         throw console.log(errorCaught);
     }
 
-    expect(errorWasCaught).toBe(false);
+   // expect(errorWasCaught).toBe(false);
 });
 
 
-const loginUrl = config.get("pitch59-url") + "/api/account/login";
 
 it(`Testing to see if we can signin`, async () => {
-  let options = {
+  options = {
     method: "POST",
     headers: {
       "content-type": "application/json"
     },
     body: JSON.stringify({
-      emailId: "Shandu@gmail.com",
+      emailId: "testGroup2@gmail.com",
       //"password": "Lutendo1"
       //emailId: "ironman@gmail.com",
-      password: "BetterThanCap10"
+      password: "BadPassword"
     })
   };
 
@@ -73,14 +77,14 @@ it(`Testing to see if we can signin`, async () => {
     console.log("Response", json);
     //delete user
 
-  let options = { 
+  options = { 
     method: 'POST',
     headers: {
       'Authorization' : 'bearer' + token
     }
   }
 // removed const or let
-  response = await fetch('pitch59-url') + '/api/users/' + userID + '/deleteTestUser';
+  response = await fetch(delUserURL, options);
   } catch (exception) {
     errorCaught = exception;
     errorWasCaught = true;
@@ -88,7 +92,7 @@ it(`Testing to see if we can signin`, async () => {
   }
 
 
-  expect(errorWasCaught).toBe(true);
+  expect(errorWasCaught).toBe(false);
   console.log(json.code);
   expect(json.code).toBe(2012);
 
