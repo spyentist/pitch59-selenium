@@ -46,8 +46,6 @@ it(`Testing to see if we can sign up a new user`, async () => {
         errorWasCaught = true;
         throw console.log(errorCaught);
     }
-
-   // expect(errorWasCaught).toBe(false);
 });
 
 
@@ -60,8 +58,6 @@ it(`Testing to see if we can signin`, async () => {
     },
     body: JSON.stringify({
       emailId: "Group2@gmail.com",
-      //"password": "Lutendo1"
-      //emailId: "ironman@gmail.com",
       password: "BadPassword"
     })
   };
@@ -70,13 +66,10 @@ it(`Testing to see if we can signin`, async () => {
   let errorCaught = null;
   let json = null;
   try {
-// removed const or let    
     response = await fetch(loginUrl, options);
     json = await response.json();
     userID = json.userId;
     console.log('Response', json);
-    //delete user
-
   options = { 
     method: 'POST',
     headers: {
@@ -84,14 +77,12 @@ it(`Testing to see if we can signin`, async () => {
       "content-type": "application/json"
     }
   }
-// removed const or let
   response = await fetch(delUserURL, options);
   } catch (exception) {
     errorCaught = exception;
     errorWasCaught = true;
     throw console.log(errorCaught);
   }
-
 
   expect(errorWasCaught).toBe(false);
   console.log(json[0].code);
