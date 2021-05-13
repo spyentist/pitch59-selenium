@@ -10,8 +10,6 @@ it(`Testing to see if we can signin`, async () => {
       "content-type": "application/json"
     },
     body: JSON.stringify({
-      //"emailId": "Shandu@gmail.com",
-      //"password": "Lutendo1"
       emailId: "myfriend@gmail.com",
       password: "YoDaddy"
     })
