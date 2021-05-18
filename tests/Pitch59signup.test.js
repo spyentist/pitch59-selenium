@@ -9,16 +9,19 @@ it(`Testing to see if we can sign up a new user`, async () => {
         method: 'POST',
         uri: signupUrl,
         headers: {
+            "content-type": "application/json"
         },
-        body: {"id":"0",
-        "firstName":"Richard",
-        "lastName":"Kevyn",
-        "contactNumber":"(999) 999-1346",
-        "emailId":"Shandu@gmail.com",
+        body: JSON.stringify({
+        "id":"0",
+        "firstName":"Jimothy",
+        "lastName":"Burns",
+        "isTesterUser": true, 
+        "contactNumber":"(999) 999-1330",
+        "emailId":"myfriend@gmail.com",
         "profilePictureThumbnailId":"",
         "profilePictureThumbnailUrl":"",
         "profilePictureFileId":"",
-        "password":"Lutendo1",
+        "password":"YoDaddy",
         "zipCode":"84440",
         "userReferralModel":{
             "id":"0",
@@ -28,16 +31,18 @@ it(`Testing to see if we can sign up a new user`, async () => {
             "senderEmail":""
             },
             "otpCode":9865},
-    };
+            )
+        };
 
     let errorWasCaught = false;
     let errorCaught = null;
-
+    
     try {
-        const response = await fetch(loginUrl, options);
-        const json = await response.json();
+        let response = await fetch(signupUrl, options);
+        let json = await response.json();
         console.log('Response',json);
         return response;
+        
     } catch (exception) {
         errorCaught = exception;
         errorWasCaught = true;
