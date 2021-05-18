@@ -78,3 +78,40 @@ it(`Testing to see if we can update information`, async () => {
     console.log(json.code);
     expect(json.code).toBe(7004);
 });
+
+it(`Testing to see if we can update information`, async () => {
+  let options = {
+      method: 'PUT',
+      uri: updateUrl,
+      headers: {
+          "authorization": `bearer ${log_token}`,
+          "content-type": "application/json"
+      },
+      body: JSON.stringify({
+          "contactNumber": "(999) 999-9456",
+          "emailId": "jarenbrownlee@gmail.com",
+          "password": "BetterThanCap10",
+          "zipCode": "83440",
+          "firstName": "Tony",
+          "lastName": "Stark",
+          "id": user_id,
+          "otpCode": 1111
+      })
+  };
+  let errorWasCaught = false;
+  let errorCaught = null;
+  let json = null;
+  try {
+      const response = await fetch(updateUrl, options);
+      json = await response.json();
+      console.log("Response", json);
+  } catch (exception) {
+      errorCaught = exception;
+      errorWasCaught = true;
+      throw console.log(errorCaught);
+  }
+
+  expect(errorWasCaught).toBe(false);
+  console.log(json.code);
+  expect(json.code).toBe(7004);
+});
