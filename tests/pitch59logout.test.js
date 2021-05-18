@@ -2,7 +2,6 @@ const fetch = require("node-fetch");
 const config = require("config");
 let log_token = null;
 const loginUrl = config.get("pitch59-url") + "/api/account/login";
-let status = null;
 
 it(`Testing to see if we can signin`, async () => {
   let options = {
@@ -58,7 +57,7 @@ it(`Testing to see if we can signout`, async () => {
         const response = await fetch(signoutUrl, options);
         const txt = await response.text();
         console.log('Response',txt);
-        status = response.status;
+        const status = response.status;
         console.log('Status',status);
         
     } catch (exception) {
