@@ -34,8 +34,8 @@ it(`Testing to see if we can signin`, async () => {
 })
 
 //TODO add create user (to avoid token dependency) then add buisness then remove business and user
-const fetch = require("node-fetch");
-const config = require("config");
+//const fetch = require("node-fetch");
+//const config = require("config");
 
 const addBusinessUrl = config.get("pitch59-url") + "/api/business/add-business";
 
