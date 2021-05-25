@@ -32,6 +32,7 @@ it(`Testing to see if we can signin`, async () => {
   console.log(json.code);
   expect(json.code).toBe(2012);
 })
+
 //TODO add create user (to avoid token dependency) then add buisness then remove business and user
 const fetch = require("node-fetch");
 const config = require("config");
