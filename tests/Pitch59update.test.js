@@ -11,8 +11,8 @@ it(`Testing to see if we can signin`, async () => {
         "content-type": "application/json"
       },
       body: JSON.stringify({
-        "emailId": "jarenbrownlee@gmail.com",
-        "password": "BetterThanCap10",
+        "emailId": "ironman@gmail.com",
+        "password": "BetterThanCap10"
       })
     };
   
@@ -42,7 +42,7 @@ it(`Testing to see if we can signin`, async () => {
 
 const updateUrl = config.get('pitch59-url') + '/api/users/update-user';
 /* Create new information */
-const newEmail = "jarenbrownlee1@gmail.com";
+const newEmail = "ironman1@gmail.com";
 const newZip = "83402";
 const newFname = "Julio";
 const newLname = "Tester";
@@ -130,7 +130,7 @@ it(`Testing to see if we can update information`, async () => {
       },
       body: JSON.stringify({
           "contactNumber": "(999) 999-9456",
-          "emailId": "jarenbrownlee@gmail.com",
+          "emailId": "ironman@gmail.com",
           "zipCode": "83440",
           "firstName": "Tony",
           "lastName": "Stark",
