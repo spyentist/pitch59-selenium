@@ -1,0 +1,342 @@
+
+> @ test-dev C:\Users\Ryan_\Documents\Internship\git_repos\Pitch59APITests
+> cross-env NODE_ENV=development jest
+
+PASS tests/pitch59email-exists.test.js
+  ● Console
+
+    console.log
+      Response { code: 2012, message: 'User Logged in Successfully', data: true }
+
+      at Object.<anonymous> (tests/pitch59email-exists.test.js:31:13)
+
+    console.log
+      2012
+
+      at Object.<anonymous> (tests/pitch59email-exists.test.js:39:11)
+
+PASS tests/pitch59login.test.js
+  ● Console
+
+    console.log
+      Response {
+        code: 2012,
+        message: 'User Logged in Successfully',
+        data: {
+          userId: '356556545427450393',
+          roleId: '191753328886284',
+          businessId: null,
+          role: 'Business Owner',
+          emailId: 'myfriend@gmail.com',
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTSUQiOiJlOXZFUVJGQnBXK0VvL3g5R25DWnpETllwenhzNzhvUG8yS1FNSVN2RUVBMXRKSXV0K0RGK0dXRmU4Z0E4dk4xIiwiVUlEIjoiSlhaeVBrVlJRVWtUZWsrSCtrZHFZTUJ2Sjh5N2szSHV4OGVaMmU3T1ZXLyttay9pWTJQbk9hZ3d1dDhwVDkzcyIsIlJJRCI6IkRuakR0dmxDRUJrb3h0K2txbHFqZmNsS1k0dVlCWS9zSzdrMGt0dTZpUEU9Iiwicm9sZSI6IkJ1c2luZXNzIE93bmVyIiwibmJmIjoxNjIzODc0OTI1LCJleHAiOjE2NTU0MTA5MjUsImlhdCI6MTYyMzg3NDkyNSwiaXNzIjoiUGl0Y2g1OUFQSSIsImF1ZCI6IlBpdGNoNTlXZWJDbGllbnQifQ.vj2kZA-YawCTcoxWNsO4ASvIvFCHs6z0nn49VDMHtec',
+          profilePictureThumbnailId: null,
+          profilePictureThumbnailUrl: null
+        }
+      }
+
+      at Object.<anonymous> (tests/pitch59login.test.js:24:13)
+
+    console.log
+      2012
+
+      at Object.<anonymous> (tests/pitch59login.test.js:32:11)
+
+FAIL tests/Pitch59addBusiness.test.js
+  ● Console
+
+    console.log
+      response 401
+
+      at Object.<anonymous> (tests/Pitch59addBusiness.test.js:30:13)
+
+  ● addBusiness test
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+      40 |
+      41 |   expect(errorWasCaught).toBe(false);
+    > 42 |   expect(response.status).toBe(200)
+         |                           ^
+      43 |
+      44 | });
+      45 |
+
+      at Object.<anonymous> (tests/Pitch59addBusiness.test.js:42:27)
+
+FAIL tests/Pitch59addcreatedelete.test.js
+  ● Console
+
+    console.log
+      Response {
+        code: 2012,
+        message: 'User Logged in Successfully',
+        data: {
+          userId: '356556545427450393',
+          roleId: '191753328886284',
+          businessId: null,
+          role: 'Business Owner',
+          emailId: 'myfriend@gmail.com',
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTSUQiOiJ2L1J1TG5HcEIyZ3RXVEdUWEV3eXg0Y04rZGdIUjhFRzZFUXZBNHhUT1REaTZOcHRJRUdUQUFKbjBGZjBwc3IvIiwiVUlEIjoiUERmaGFLQ0lhWUVuNkRiK1lZSTZUdlp5UXI0czlIRVI1V2FQN0lTWnZJY2JRKzZoVjl2eW9CMmZaejVRVUJIWSIsIlJJRCI6InQyWiswQnBkd05ibFhVQmVSVGJ6RGNYU0k2Q3ZPK3VzVDZaT2tVdTkwNkE9Iiwicm9sZSI6IkJ1c2luZXNzIE93bmVyIiwibmJmIjoxNjIzODc0OTI0LCJleHAiOjE2NTU0MTA5MjQsImlhdCI6MTYyMzg3NDkyNCwiaXNzIjoiUGl0Y2g1OUFQSSIsImF1ZCI6IlBpdGNoNTlXZWJDbGllbnQifQ.wClQBBtDHIiwl6WmjDkuxIi2H8h0ZC2bURX0Y3v7i94',
+          profilePictureThumbnailId: null,
+          profilePictureThumbnailUrl: null
+        }
+      }
+
+      at Object.<anonymous> (tests/Pitch59addcreatedelete.test.js:24:13)
+
+    console.log
+      2012
+
+      at Object.<anonymous> (tests/Pitch59addcreatedelete.test.js:32:11)
+
+    console.log
+      response 401
+
+      at Object.<anonymous> (tests/Pitch59addcreatedelete.test.js:65:13)
+
+  ● addBusiness test
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+      75 |
+      76 |   expect(errorWasCaught).toBe(false);
+    > 77 |   expect(response.status).toBe(200)
+         |                           ^
+      78 |
+      79 | });
+      80 |
+
+      at Object.<anonymous> (tests/Pitch59addcreatedelete.test.js:77:27)
+
+PASS tests/Pitch59.test.js
+PASS tests/Pitch59signup.test.js
+  ● Console
+
+    console.log
+      Response {
+        code: 2012,
+        message: 'User Logged in Successfully',
+        data: {
+          userId: '356556545427450393',
+          roleId: '191753328886284',
+          businessId: null,
+          role: 'Business Owner',
+          emailId: 'myfriend@gmail.com',
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTSUQiOiI0REsxRFpDSGpjL2dQQzJnRUprRUtpU2ZMOGI1d215YTk4Zy8yQldQdVpoR2pPKzFWWGhsVktIdFkrQVRpa29VIiwiVUlEIjoib3p6YUlSL1RXOXFDTEppaVJEQ2ZQN0UwUEE0K2xjcnRLSFJQTzZDSnZRNDNIUm15SUZTT0Y5c0JEVEFUODI3OSIsIlJJRCI6IlBncE1sNVdMYjJpdE95eFhBY1Q0QThoVDM5ZUZGRHFzUTRxamdsVm1ON289Iiwicm9sZSI6IkJ1c2luZXNzIE93bmVyIiwibmJmIjoxNjIzODc0OTI1LCJleHAiOjE2NTU0MTA5MjUsImlhdCI6MTYyMzg3NDkyNSwiaXNzIjoiUGl0Y2g1OUFQSSIsImF1ZCI6IlBpdGNoNTlXZWJDbGllbnQifQ.R3kRexYmnLV52tFuueL8M3tqrpt9X2FxvEEalOEGmb0',
+          profilePictureThumbnailId: null,
+          profilePictureThumbnailUrl: null
+        }
+      }
+
+      at Object.<anonymous> (tests/Pitch59signup.test.js:43:17)
+
+PASS tests/Pitch59badlogin.test.js
+  ● Console
+
+    console.log
+      Response {
+        code: 2012,
+        message: 'User Logged in Successfully',
+        data: {
+          userId: '351135329259167475',
+          roleId: '191753328886285',
+          businessId: null,
+          role: 'User',
+          emailId: 'group2@gmail.com',
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTSUQiOiJrTXRDd0trdVRVU0g4NjBTTVpOV2g2QmpCcW9STFZqcWlPblRmUmtoNDZhV1dNaEdrMUpvMVZLb0xXdWFieU1lIiwiVUlEIjoib0FYYTk0RFFscjRORG1MSHRPK214VlZ3OVNTQUx0RnhZSjVQV3JYdHloMUxqSmJZUEwvcStOYXliaHh6ZjQ5USIsIlJJRCI6ImNrYWgvRHQvT0lucGwybUZTdkRia0x1YXFIODRoS1BTRktnaHZSekgvb2s9Iiwicm9sZSI6IlVzZXIiLCJuYmYiOjE2MjM4NzQ5MjYsImV4cCI6MTY1NTQxMDkyNiwiaWF0IjoxNjIzODc0OTI2LCJpc3MiOiJQaXRjaDU5QVBJIiwiYXVkIjoiUGl0Y2g1OVdlYkNsaWVudCJ9.Or-3slR8Pd0MXBQfSOYnvR6b86TGW3PlTzzqI1yh0jY',
+          profilePictureThumbnailId: null,
+          profilePictureThumbnailUrl: null
+        }
+      }
+
+      at Object.<anonymous> (tests/Pitch59badlogin.test.js:42:17)
+
+    console.log
+      Response [
+        {
+          code: 2001,
+          message: 'Please provide valid credentials',
+          field: 'UserName/Password',
+          Code: 2001,
+          Message: 'Please provide valid credentials',
+          Field: 'UserName/Password'
+        }
+      ]
+
+      at Object.<anonymous> (tests/Pitch59badlogin.test.js:72:13)
+
+    console.log
+      2001
+
+      at Object.<anonymous> (tests/Pitch59badlogin.test.js:88:11)
+
+PASS tests/Pitch59update.test.js
+  ● Console
+
+    console.log
+      Response {
+        code: 2012,
+        message: 'User Logged in Successfully',
+        data: {
+          userId: '343924047983793673',
+          roleId: '191753328886285',
+          businessId: null,
+          role: 'User',
+          emailId: 'ironman@gmail.com',
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTSUQiOiJDZm92eG93MkVzVTVGRmx2NktUMktYK2VndWpvOHVXZ2pqRUE5SlpOVFpGL3ZmSGFIbmFOUVdwYU9MOFJleHN6IiwiVUlEIjoiTVBOajFkVlhRK0dpdzRlT0RUUWZaSkl3c3pBRE9aRlEzKzFobXZQUzJ2YXpFZ095MXNDMktEOUVxQmZXdU1vOCIsIlJJRCI6IlNBR2R2QmNaUkFuTGRLdXNDVS9rZERTRmF2OFpjemhUcnN6djNOVXVNVzg9Iiwicm9sZSI6IlVzZXIiLCJuYmYiOjE2MjM4NzQ5MjUsImV4cCI6MTY1NTQxMDkyNSwiaWF0IjoxNjIzODc0OTI1LCJpc3MiOiJQaXRjaDU5QVBJIiwiYXVkIjoiUGl0Y2g1OVdlYkNsaWVudCJ9.VgjgHc33HO2iecSxFU_5n66rltxDYXwB9skiaJcZyos',
+          profilePictureThumbnailId: null,
+          profilePictureThumbnailUrl: null
+        }
+      }
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:26:15)
+
+    console.log
+      Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTSUQiOiJDZm92eG93MkVzVTVGRmx2NktUMktYK2VndWpvOHVXZ2pqRUE5SlpOVFpGL3ZmSGFIbmFOUVdwYU9MOFJleHN6IiwiVUlEIjoiTVBOajFkVlhRK0dpdzRlT0RUUWZaSkl3c3pBRE9aRlEzKzFobXZQUzJ2YXpFZ095MXNDMktEOUVxQmZXdU1vOCIsIlJJRCI6IlNBR2R2QmNaUkFuTGRLdXNDVS9rZERTRmF2OFpjemhUcnN6djNOVXVNVzg9Iiwicm9sZSI6IlVzZXIiLCJuYmYiOjE2MjM4NzQ5MjUsImV4cCI6MTY1NTQxMDkyNSwiaWF0IjoxNjIzODc0OTI1LCJpc3MiOiJQaXRjaDU5QVBJIiwiYXVkIjoiUGl0Y2g1OVdlYkNsaWVudCJ9.VgjgHc33HO2iecSxFU_5n66rltxDYXwB9skiaJcZyos
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:29:15)
+
+    console.log
+      ID 343924047983793673
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:30:15)
+
+    console.log
+      2012
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:39:13)
+
+    console.log
+      Response {
+        code: 7004,
+        message: 'User updated successfully.',
+        data: {
+          password: null,
+          isActive: true,
+          otpCode: null,
+          referralCount: null,
+          zipCode: '83402',
+          role: null,
+          firstName: 'Julio',
+          lastName: 'Tester',
+          contactNumber: '(999) 999-9125',
+          emailId: 'ironman1@gmail.com',
+          profilePictureFileId: null,
+          profilePictureThumbnailId: null,
+          profilePictureThumbnailUrl: null,
+          roleId: '191753328886285',
+          createdAt: '1619140283520',
+          createdBy: '343924047983793673',
+          updatedAt: '1623874926506',
+          updatedBy: '343924047983793673',
+          id: '343924047983793673'
+        }
+      }
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:75:17)
+
+    console.log
+      7004
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:83:13)
+
+    console.log
+      https://api.p59.dev/api/users/343924047983793673/profile
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:89:11)
+
+    console.log
+      343924047983793673
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:90:11)
+
+    console.log
+      Response {
+        code: 1001,
+        message: 'Data fetched successfully.',
+        data: {
+          password: null,
+          isActive: true,
+          otpCode: null,
+          referralCount: null,
+          zipCode: '83402',
+          role: null,
+          firstName: 'Julio',
+          lastName: 'Tester',
+          contactNumber: '(999) 999-9125',
+          emailId: 'ironman1@gmail.com',
+          profilePictureFileId: null,
+          profilePictureThumbnailId: null,
+          profilePictureThumbnailUrl: null,
+          roleId: '191753328886285',
+          createdAt: '1619140283520',
+          createdBy: '343924047983793673',
+          updatedAt: '1623874926506',
+          updatedBy: '343924047983793673',
+          id: '343924047983793673'
+        }
+      }
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:105:15)
+
+    console.log
+      1001
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:114:11)
+
+    console.log
+      Response {
+        code: 7004,
+        message: 'User updated successfully.',
+        data: {
+          password: null,
+          isActive: true,
+          otpCode: null,
+          referralCount: null,
+          zipCode: '83440',
+          role: null,
+          firstName: 'Tony',
+          lastName: 'Stark',
+          contactNumber: '(999) 999-9456',
+          emailId: 'ironman@gmail.com',
+          profilePictureFileId: null,
+          profilePictureThumbnailId: null,
+          profilePictureThumbnailUrl: null,
+          roleId: '191753328886285',
+          createdAt: '1619140283520',
+          createdBy: '343924047983793673',
+          updatedAt: '1623874927140',
+          updatedBy: '343924047983793673',
+          id: '343924047983793673'
+        }
+      }
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:147:15)
+
+    console.log
+      7004
+
+      at Object.<anonymous> (tests/Pitch59update.test.js:155:11)
+
+
+Test Suites: 2 failed, 6 passed, 8 total
+Tests:       2 failed, 11 passed, 13 total
+Snapshots:   0 total
+Time:        7.592 s
+Ran all test suites.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! @ test-dev: `cross-env NODE_ENV=development jest`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the @ test-dev script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\Ryan_\AppData\Roaming\npm-cache\_logs\2021-06-16T20_22_06_660Z-debug.log
