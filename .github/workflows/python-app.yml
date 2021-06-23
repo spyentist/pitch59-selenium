@@ -8,6 +8,7 @@ on:
     branches: [ test-without-failures ]
   pull_request:
     branches: [ test-without-failures ]
+  workflow_dispatch:
 
 jobs:
   build:
