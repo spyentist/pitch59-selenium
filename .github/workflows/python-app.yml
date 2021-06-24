@@ -17,14 +17,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: test-without-failures
-    - name: Install Google Chrome
-      run: |
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install ./google-chrome-stable_current_amd64.deb
-    - name: Install Python and Python Packages
-      run: |
-        python -m pip install --upgrade pip
-        pip install selenium
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
     - run: python3 python/p59-search.py -h test
     - run: python3 python/p59-sign-in.py -h test
     - run: python3 python/p59-setting.py -h test
