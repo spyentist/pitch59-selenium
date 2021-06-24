@@ -1,0 +1,28 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python application
+
+on:
+  push:
+    branches: [ test-without-failures ]
+  pull_request:
+    branches: [ test-without-failures ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: docker://selenium/standalone-chrome:4.0.0-beta-3-20210426
+    - run: |
+        python -m pip install --upgrade pip
+        pip install selenium
+        /opt/bin/entry_point.sh &
+        sleep 5
+    
+    - run: python3 p59-search.py -h test
+    - run: python3 p59-sign-in.py -h test
+    - run: python3 p59-setting.py -h test
+    - run: python3 p59-reset-pwd.py -h test
+    - run: python3 p59-favorite.py -h test
