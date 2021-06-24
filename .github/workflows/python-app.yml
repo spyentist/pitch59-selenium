@@ -21,10 +21,17 @@ jobs:
       with:
         python-version: '3.x'
     - run: pip install selenium
+    - name: Install Chrome
+      run: |
+        sudo apt-get -y update
+        sudo apt-get -y install google-chrome-stable
     - name: Install Chrome Driver
       run: | 
         wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
         unzip chromedriver_linux64.zip
+        rm chromedriver_linux64.zip
+        mv chromedriver ~/bin/chromedriver
+        sudo chmod 0755 ~/bin/chromedriver
     - run: ls
     - run: python3 python/p59-search.py test
     - run: python3 python/p59-sign-in.py test
