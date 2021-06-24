@@ -14,7 +14,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: selenium/standalone-chrome:4.0.0-rc-1-prerelease-20210618
+      image: selenium/standalone-chrome
     steps:
     - uses: actions/checkout@v2
       with:
