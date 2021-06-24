@@ -21,6 +21,11 @@ jobs:
       with:
         python-version: '3.x'
     - run: pip install selenium
+    - name: Install Chrome Driver
+      run: | 
+        wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+    - run: ls
     - run: python3 python/p59-search.py test
     - run: python3 python/p59-sign-in.py test
     - run: python3 python/p59-setting.py test
