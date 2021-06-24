@@ -20,6 +20,10 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+    - run: |
+        pip install selenium
+        /opt/bin/entry_point.sh &
+        sleep 5
     - run: python3 python/p59-search.py -h test
     - run: python3 python/p59-sign-in.py -h test
     - run: python3 python/p59-setting.py -h test
