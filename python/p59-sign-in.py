@@ -1,7 +1,8 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-import time
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import sys, getopt
 
 
@@ -34,65 +35,33 @@ options.add_argument('--headless')
 driver = main(sys.argv[1:])
 driver.get("https://public.p59.dev/welcome")
 
+def wait(xpath):
+   return WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, xpath)))
 
 print('test start')
-link = driver.find_element_by_xpath(
-    '//*[@id="header-container"]/div/app-welcome-page-header/div/div[2]/div[2]/div[1]')
+link = wait('//*[@id="header-container"]/div/app-welcome-page-header/div/div[2]/span[3]')
 link.click()
 print('click login')
 
-time.sleep(5)
-email = driver.find_element_by_xpath('//*[@id="email"]')
+email = wait('//*[@id="email"]')
 email.send_keys('1111@gmail.com')
 
-password = driver.find_element_by_xpath('//*[@id="password"]')
+password = wait('//*[@id="password"]')
 password.send_keys('Love1111')
 
-logIn = driver.find_element_by_xpath(
+logIn = wait(
     '/html/body/app-root/main/app-new-sign-in/div/div/div/div/div[2]/div/form/button')
 logIn.click()
-time.sleep(2)
 print('log in')
 
-# contact = driver.find_element_by_xpath(
-#     '//*[@id="search-swiper-pr_id_9"]/swiper/div/div[1]/div[3]/app-search-result-thumbnail/div/div[5]/div[2]')
-# time.sleep(3)
-
-# contact.click()
-# time.sleep(3)
-
-# rightBotton = driver.find_element_by_xpath(
-#     '//*[@id="search-swiper-pr_id_9"]/swiper/div/div[4]')
-# rightBotton.click()
-# time.sleep(2)
-# rightBotton.click()
-# time.sleep(2)
-# print('click right arrow on the pitch card')
-
-profi = driver.find_element_by_xpath(
+profi = wait(
     '//*[@id="header-container"]/div/app-welcome-page-header/div/div[2]/div[4]/div')
 profi.click()
-time.sleep(2)
 
-logOut = driver.find_element_by_xpath(
+logOut = wait(
     '//*[@id="header-container"]/div/app-welcome-page-header/div/div[2]/p-overlaypanel[2]/div/div/div/div[2]/div')
 logOut.click()
 print('click profile and log out')
 
-time.sleep(2)
-driver.back()
-
-# time.sleep(5)
 print("test end")
 driver.quit()
-# log in
-# //*[@id="header-container"]/div/app-welcome-page-header/div/div[2]/span[3]
-
-# Email
-# //*[@id="email"]
-
-# password
-# //*[@id="password"]
-
-# logIn button
-# /html/body/app-root/main/app-new-sign-in/div/div/div/div/div[2]/div/form/button
