@@ -13,6 +13,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: joyzoursky/python-chromedriver:latest
     steps:
     - uses: actions/checkout@v2
       with:
@@ -20,7 +22,6 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
-    - uses: nanasess/setup-chromedriver@master
     - run: pip install selenium
     - run: python3 python/p59-search.py test
     - run: python3 python/p59-sign-in.py test
