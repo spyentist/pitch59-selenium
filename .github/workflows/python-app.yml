@@ -22,7 +22,7 @@ jobs:
         pip install selenium
         /opt/bin/entry_point.sh &
         sleep 5
-    - run: ls
+    - run: ls python
   test:
     runs-on: ubuntu-latest
     needs: build
