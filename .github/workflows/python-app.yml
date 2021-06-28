@@ -19,8 +19,8 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: test-without-failures
-#     - run: python3 python/p59-search.py test
-    - run: python3 python/p59-sign-in.py
-    - run: python3 python/p59-setting.py test
-    - run: python3 python/p59-reset-pwd.py test
-    - run: python3 python/p59-favorite.py test
+      - run: python3 -m pytest --ci
+    # - run: python3 python/p59-search.py test
+    # - run: python3 python/p59-setting.py test
+    # - run: python3 python/p59-reset-pwd.py test
+    # - run: python3 python/p59-favorite.py test
