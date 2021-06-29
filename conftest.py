@@ -108,12 +108,12 @@ def user():
 
 @pytest.fixture(scope="module")
 def wait(driver):
-    return lambda xPath, timeout=5: WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((By.XPATH, xPath)))
+    return lambda xPath, timeout=10: WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((By.XPATH, xPath)))
 
 
 @pytest.fixture(scope="module")
 def wait_for_url(driver):
-    return lambda url, timeout=5: WebDriverWait(driver, timeout).until(lambda driver: driver.current_url == url)
+    return lambda url, timeout=10: WebDriverWait(driver, timeout).until(lambda driver: driver.current_url == url)
 
 
 @pytest.fixture(scope="module")
