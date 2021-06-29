@@ -22,11 +22,12 @@ jobs:
     - name: Upgrade Pip
       run: |
         pip install --upgrade pip
+        pip install -r requirements.txt
 
     - name: Test with pytest
       run: |
         pip install pytest
-        python -m pytest --ci
+        pytest --ci
 
     # - run: sudo apt-get -y install python3-pip
     # - run: pip install -r requirements.txt
