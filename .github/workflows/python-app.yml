@@ -22,7 +22,7 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest
-        pytest
+        pytest --ci
 
     # - run: sudo apt-get -y install python3-pip
     # - run: pip install -r requirements.txt
